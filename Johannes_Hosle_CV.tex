@@ -1,0 +1,168 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage[
+  letterpaper,
+  left=0.68in,
+  right=0.68in,
+  top=0.52in,
+  bottom=0.55in,
+  includefoot
+]{geometry}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+
+\definecolor{accent}{HTML}{843542}
+\definecolor{bodytext}{HTML}{292525}
+\definecolor{muted}{HTML}{665F5F}
+\definecolor{rulecolor}{HTML}{CBBDB5}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=accent,
+  linkcolor=accent,
+  pdftitle={Curriculum Vitae - Johannes Hosle},
+  pdfauthor={Johannes Hosle}
+}
+
+\color{bodytext}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{0pt}
+\setlength{\emergencystretch}{2em}
+\linespread{0.96}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[L]{\color{muted}\footnotesize Johannes Hosle}
+\fancyfoot[R]{\color{muted}\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\footskip}{0.31in}
+
+\makeatletter
+\newcommand{\footerline}{%
+  \begingroup
+  \color{rulecolor}\rule{\textwidth}{0.35pt}\par
+  \vspace{5pt}%
+  \endgroup
+}
+\fancyfoot[C]{\raisebox{11pt}[0pt][0pt]{\makebox[\textwidth][l]{\footerline}}}
+\makeatother
+
+\newcommand{\cvsection}[1]{%
+  \vspace{4pt}%
+  {\color{accent}\bfseries\fontsize{10.5}{11.5}\selectfont\MakeUppercase{#1}}\par
+  \vspace{1pt}%
+  {\color{rulecolor}\hrule height 0.35pt}%
+  \vspace{2.5pt}%
+}
+
+\newcommand{\datedheading}[2]{%
+  \par\noindent
+  \begin{minipage}[t]{0.81\textwidth}\vspace{0pt}\bfseries #1\end{minipage}%
+  \hfill
+  \begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\raggedleft\color{muted}#2\end{minipage}%
+  \par
+}
+
+\newcommand{\entry}[3]{%
+  \datedheading{#1}{#2}\par
+  \if\relax\detokenize{#3}\relax\else#3\par\fi
+  \vspace{1pt}%
+}
+
+\newcommand{\publication}[1]{%
+  \begingroup
+  \hangindent=0.8em
+  \hangafter=1
+  #1\par
+  \endgroup
+  \vspace{2pt}%
+}
+
+\begin{document}
+\thispagestyle{fancy}
+
+{\fontsize{26}{29}\selectfont Johannes Hosle}\par
+\vspace{1pt}
+{\color{accent}\href{mailto:jhosle@mit.edu}{jhosle@mit.edu}}\par
+
+\cvsection{Employment}
+\entry{Carnegie Mellon University in Qatar}{2026--present}{%
+  Postdoctoral Fellow in Mathematics\par
+  Mentors: Layan El Hajj and Henrik Shahgholian
+}
+
+\cvsection{Education}
+\entry{Massachusetts Institute of Technology}{2020--2026}{%
+  Ph.D. in Mathematics\par
+  Advisor: David Jerison
+}
+\entry{University of California, Los Angeles}{2016--2020}{%
+  B.Sc. in Mathematics with Departmental Honors, \textit{summa cum laude}\par
+  M.A. in Mathematics
+}
+
+\cvsection{Publications and Preprints}
+\publication{J. Hosle, \href{https://arxiv.org/abs/2609.05107}{Monotonicity formulas in positively curved settings with applications to two-phase free boundary problems}, submitted.}
+\publication{J. Hosle, \href{https://arxiv.org/abs/2607.10881}{The isomorphic section-projection problem for convex bodies}, submitted.}
+\publication{J. Hosle and P. Ivanisvili, \href{https://arxiv.org/abs/2606.25350}{Geometric Block Exponents and a Uniform Mixed-Alphabet Sumset Inequality}, submitted.}
+\publication{J. Hosle, \href{https://arxiv.org/abs/2606.07946}{Stolarsky-Type Inequalities in a Max-Convolution Problem}, submitted.}
+\publication{J. Hosle, A. V. Kolesnikov, and G. V. Livshyts, On the $L_p$-Brunn--Minkowski and dimensional Brunn--Minkowski conjectures for log-concave measures, \textit{J. Geom. Anal.} (2021).}
+\publication{J. Hosle, On extensions of the Loomis--Whitney inequality and Ball's inequality for concave, homogeneous measures, \textit{Adv. Appl. Math.} (2020).}
+\publication{J. Hosle, On the Comparison of Measures of Convex Bodies via Projections and Sections, \textit{Int. Math. Res. Not. IMRN} (2021).}
+
+\cvsection{Honors and Awards}
+\entry{Sigma Xi}{2026}{}
+\entry{Dean of Science Fellowship, MIT}{2020--2023}{}
+\entry{Phi Beta Kappa}{2020}{}
+\entry{Sherwood Prize, UCLA}{2020}{}
+\entry{Dean's Honors List}{2016--2020}{}
+\entry{Putnam Competition, Top 250}{2016}{}
+\entry{National Merit Scholarship Semifinalist}{2015}{}
+
+\cvsection{Teaching and Grading}
+\entry{18.095 Mathematics Lecture Series, MIT}{Jan. 2026}{Teaching Assistant (J. Dunkel)}
+\entry{18.065 Matrix Methods in Data Analysis, Signal Processing, and Machine Learning, MIT}{Spring 2025}{Teaching Assistant (Z. Chen)}
+\entry{18.100B Real Analysis, MIT}{Fall 2024}{Course Assistant (L. Guth)}
+\entry{18.100P Real Analysis, MIT}{Spring 2024}{Recitation Leader (K. Naff)}
+\entry{18.01 Calculus, MIT}{Fall 2023}{Recitation Leader (L. Guth)}
+
+\newpage
+\thispagestyle{fancy}
+
+\cvsection{Mentorship Experience}
+\entry{Academic Mentor, Mathroots @ MIT}{July 2026}{Two-week mathematical talent accelerator for high school students hosted by MIT PRIMES.}
+\entry{MIT Directed Reading Program}{Jan. 2025}{Mentored undergraduates Ryan Dong and Caleb Pascale in convex geometry, including the Busemann--Petty problem and Bourgain's bound for the isotropic constant.}
+
+\cvsection{Presentations}
+\entry{Analysis Seminar, Columbia University}{Sept. 2026}{Upcoming}
+\entry{Analysis Seminar, Brown University}{Sept. 2026}{Upcoming}
+\entry{Synergies between Geometry, Probability, and Computation in High Dimensions}{Aug. 2026}{ICERM, Brown University, Providence, Rhode Island}
+\entry{Workshop in PDE and Applied Math in the Northeast Region}{Mar. 2026}{University of Connecticut, Storrs, Connecticut}
+\entry{Pure Math Graduate Student Seminar, MIT}{Feb. 2025}{}
+\entry{BIRS Workshop: Geometric Tomography}{Feb. 2020}{BIRS, Banff, Canada}
+\entry{Workshop in Convexity and Geometric Aspects of Harmonic Analysis}{Dec. 2019}{Georgia Institute of Technology, Atlanta, Georgia}
+
+\cvsection{Research Programs and Summer Schools}
+\entry{Interactions between Convex Geometry and Spectral Analysis}{July 2025}{Universit\'e de Montr\'eal, Montr\'eal, Canada}
+\entry{Particle Interactive Systems: Analysis and Computational Methods}{June 2024}{SLMath, Berkeley, California}
+\entry{Georgia Tech REU in Mathematics}{Summer 2018}{Supervisors: Michael Lacey and Galyna Livshyts}
+
+\cvsection{Programming}
+\textbf{Python:} Proficient; background in statistical learning theory; experience with NumPy and scikit-learn.\par\vspace{4pt}
+\textbf{Julia:} Proficient; used for gradient flows in free boundary problems, supersolution construction, and numerical estimates for weighted Wirtinger inequalities.\par\vspace{4pt}
+\textbf{Wolfram Language:} Intermediate; familiar with machine learning methods.\par\vspace{4pt}
+\textbf{LaTeX:} Proficient.
+
+\cvsection{Languages and Citizenship}
+\textbf{Languages:} English (native), Russian (elementary).\par\vspace{4pt}
+\textbf{Citizenships:} United States and Germany.
+
+\end{document}
